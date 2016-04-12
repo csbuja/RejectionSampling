@@ -13,7 +13,7 @@ while i<max_iter:
 	y = r.random()
 	dist_from_center_x = abs(.5-x) 
 	dist_from_center_y = abs(.5-y)
-	#p = (dist_from_center_x,dist_from_center_y)
+#	p = (dist_from_center_x,dist_from_center_y)
 	p =(x,y)
 	if (dist_from_center_x**2 + dist_from_center_y**2)**.5 <=.5:
 		number_in_circle +=1
@@ -22,7 +22,7 @@ while i<max_iter:
 		pairs_out_of_circle.append(p)
 	i+=1
 
-print "area between circle and square" + str((max_iter-number_in_circle)/max_iter)
+print "area between circle and square: " + str((max_iter-number_in_circle)/max_iter)
 
 
 in_circle_x=[]
@@ -40,10 +40,7 @@ for out_ in pairs_out_of_circle:
 x = in_circle_x + out_circle_x
 y = in_circle_y+ out_circle_y
 assert(len(in_circle_y)+ len(out_circle_y) == max_iter)
-print number_in_circle
 colors = ['blue']*int(number_in_circle) + ['red']*int(max_iter-number_in_circle)
-#print x[max_iter-1]
-print len(x)
-#print y[max_iter-1]
 plt.scatter(x,y,c=colors,marker='x')
 plt.show()
+#plt.savefig('distanceplot.png')
